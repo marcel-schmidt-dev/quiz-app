@@ -1,1 +1,96 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Rubik-Regular;
+    src: url('/assets/fonts/static/Rubik-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Rubik-Medium;
+    src: url('/assets/fonts/static/Rubik-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Rubik-Light;
+    src: url('/assets/fonts/static/Rubik-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Rubik-Italic;
+    src: url('/assets/fonts/static/Rubik-Italic.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    margin: 0;
+    color: #313E51;
+    font-size: 1rem;
+    font-family: 'Rubik';
+}
+
+.screen {
+    min-height: 100vh;
+    background-color: #F4F6FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/assets/images/pattern-background-desktop-light.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 100%;
+    max-width: 1160px;
+}
+
+.font-display {
+    font-family: 'Rubik-Medium';
+    font-size: 12rem;
+    line-height: 100%;
+}
+
+.font-heading-l-bold {
+    font-family: 'Rubik-Medium';
+    font-size: 5.333rem;
+    line-height: 100%;
+}
+
+.font-heading-l-regular {
+    font-family: 'Rubik-Light';
+    font-size: 5.3333rem;
+    line-height: 100%;
+}
+
+.font-heading-m {
+    font-family: 'Rubik-Medium';
+    font-size: 3rem;
+    line-height: 100%;
+}
+
+.font-heading-s {
+    font-family: 'Rubik-Medium';
+    font-size: 2.333rem;
+    line-height: 100%;
+}
+
+.font-body-m {
+    font-family: 'Rubik-Regular';
+    font-size: 1rem;
+    line-height: 150%;
+}
+
+.font-body-s {
+    font-family: 'Rubik-Italic';
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+}

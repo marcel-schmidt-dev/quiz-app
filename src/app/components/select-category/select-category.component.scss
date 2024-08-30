@@ -1,0 +1,22 @@
+.select-category {
+    display: flex;
+
+    >div {
+        width: 50%;
+
+        &:last-child {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+    }
+
+    .font-heading-l-regular {
+        margin-bottom: 48px;
+        display: block;
+    }
+
+    p {
+        color: #626C7F;
+    }
+}

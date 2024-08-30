@@ -1,0 +1,17 @@
+<div class="select-category">
+  <div>
+    <span class="font-heading-l-regular">
+      Welcome to the<br /><span class="font-heading-l-bold"
+        >Frontend Quiz!</span
+      >
+    </span>
+    <p class="font-body-s">Pick a subject to get started.</p>
+  </div>
+  <div>
+    @for (item of categories; track $index) {
+    <app-button [icon]="item.icon" [iconBackground]="item.background">
+      {{ item.title }}
+    </app-button>
+    }
+  </div>
+</div>
