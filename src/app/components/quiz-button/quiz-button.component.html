@@ -1,0 +1,8 @@
+<button
+  class="button font-heading-s"
+  [ngClass]="{ selected: isSelected }"
+  (click)="handleClick()"
+>
+  <div class="icon-box">{{ letter }}</div>
+  <ng-content></ng-content>
+</button>

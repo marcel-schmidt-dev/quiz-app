@@ -1,5 +1,12 @@
 <header>
-  <div class="logo">Logo</div>
+  <div class="logo">
+    @if (icon) {
+    <div class="icon-box" [ngStyle]="{ 'background-color': background }">
+      <img [src]="icon" />
+    </div>
+    <span class="font-heading-s">{{ title }}</span>
+    }
+  </div>
   <div class="mode-switch">
     <img src="/assets/images/icon-sun-dark.svg" />
     <label class="switch">

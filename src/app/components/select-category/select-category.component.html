@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="select-category">
   <div>
     <span class="font-heading-l-regular">
@@ -8,10 +9,15 @@
     <p class="font-body-s">Pick a subject to get started.</p>
   </div>
   <div>
-    @for (item of categories; track $index) {
-    <app-button [icon]="item.icon" [iconBackground]="item.background">
-      {{ item.title }}
-    </app-button>
+    @for (category of categories; track $index) {
+    <app-select-category-button
+      [icon]="category.icon"
+      [iconBackground]="category.background"
+      [category]="category"
+      (buttonClick)="navToQuiz($event)"
+    >
+      {{ category.title }}
+    </app-select-category-button>
     }
   </div>
 </div>

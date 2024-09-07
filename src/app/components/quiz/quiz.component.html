@@ -1,1 +1,9 @@
-<p>quiz works!</p>
+<app-header
+  [title]="quiz.title"
+  [icon]="quiz.icon"
+  [background]="quiz.background"
+></app-header>
+<app-quiz-container
+  [questions]="quiz.questions"
+  [questionIndex]="questionIndex"
+></app-quiz-container>

@@ -1,0 +1,20 @@
+.quiz {
+    display: flex;
+
+    >div {
+        width: 50%;
+
+        &:first-child {
+            span {
+                display: block;
+                margin-bottom: 28px;
+            }
+        }
+
+        &:last-child {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+    }
+}
