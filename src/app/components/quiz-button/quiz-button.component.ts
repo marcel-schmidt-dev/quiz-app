@@ -11,9 +11,13 @@ import { CommonModule } from '@angular/common';
 export class QuizButtonComponent {
   @Input() letter: string = '';
   @Input() isSelected: boolean = false;
-  @Output() buttonClick = new EventEmitter();
+  @Input() index: any;
+  @Input() isCorrect: boolean = false;
+  @Input() answerSubmitted: boolean = false;
+
+  @Output() answerSelected = new EventEmitter<Number>();
 
   handleClick() {
-    this.buttonClick.emit();
+    this.answerSelected.emit(this.index);
   }
 }

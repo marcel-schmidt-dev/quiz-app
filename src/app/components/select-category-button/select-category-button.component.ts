@@ -1,5 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { QuizService } from '../../services/quiz.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-select-category-button',
@@ -13,9 +15,10 @@ export class SelectCategoryButtonComponent {
   @Input() category: any = '';
   @Input() iconBackground: string = '';
 
-  @Output() buttonClick = new EventEmitter();
+  constructor(private quizService: QuizService, private router: Router) {}
 
   handleClick() {
-    this.buttonClick.emit(this.category.title);
+    this.quizService.setCategory(this.category);
+    this.router.navigate(['quiz']);
   }
 }

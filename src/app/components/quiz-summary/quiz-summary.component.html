@@ -1,0 +1,23 @@
+<div class="quiz-summary">
+  <div>
+    <span class="font-heading-l-regular">
+      Quiz completed<br /><span class="font-heading-l-bold">You scored...</span>
+    </span>
+  </div>
+  <div>
+    <div class="card">
+      <div class="logo">
+        <div
+          class="icon-box"
+          [ngStyle]="{ 'background-color': category.background }"
+        >
+          <img [src]="category.icon" />
+        </div>
+        <span class="font-heading-s">{{ category.title }}</span>
+      </div>
+      <div class="score font-heading-l-bold">{{ correctAnswers }}</div>
+      <div class="score-subtitle font-body-m">out of {{ maxAnswers }}</div>
+    </div>
+    <a class="font-heading-s" href="/">Play Again</a>
+  </div>
+</div>

@@ -3,10 +3,12 @@ header {
     justify-content: space-between;
     margin-bottom: 100px;
 
-    .logo {
+    .logo a {
         display: flex;
         align-items: center;
         gap: 24px;
+        text-decoration: none;
+        color: #313e51;
 
         .icon-box {
             max-width: 56px;

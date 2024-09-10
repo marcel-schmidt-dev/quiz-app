@@ -4,6 +4,6 @@ import { QuizComponent } from './components/quiz/quiz.component';
 
 export const routes: Routes = [
   { path: '', component: SelectCategoryComponent },
-  { path: ':category', component: QuizComponent },
+  { path: 'quiz', component: QuizComponent },
   { path: '**', redirectTo: '' },
 ];

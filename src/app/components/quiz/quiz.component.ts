@@ -1,27 +1,95 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
-import { QuizzesService } from '../../services/quizzes.service';
-import { QuizContainerComponent } from '../quiz-container/quiz-container.component';
+import { QuizButtonComponent } from '../quiz-button/quiz-button.component';
+import { SubmitButtonComponent } from '../submit-button/submit-button.component';
+import { QuizService } from '../../services/quiz.service';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { QuizSummaryComponent } from '../quiz-summary/quiz-summary.component';
 
 @Component({
   selector: 'app-quiz',
   standalone: true,
-  imports: [HeaderComponent, QuizContainerComponent],
+  imports: [
+    HeaderComponent,
+    QuizButtonComponent,
+    SubmitButtonComponent,
+    QuizSummaryComponent,
+  ],
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss',
 })
-export class QuizComponent implements OnInit {
-  quiz: any;
-  questionIndex: number = 0;
+export class QuizComponent {
+  category: any;
+  question: string = '';
+  activeQuestionIndex: number = 0;
+  maxQuestionCount: number = 0;
+  possibleAnswers: string[] = [];
+  selectedAnswer: number | undefined;
+  answerSubmitted: boolean = false;
+  answerSelectable: boolean = true;
+  correctAnswerIndex: number | void | undefined;
+  noAnswerSelected: boolean = false;
+  correctAnswers: number = 0;
+  private subscription!: Subscription;
 
-  constructor(
-    private route: ActivatedRoute,
-    private quizService: QuizzesService
-  ) {}
+  constructor(private quizService: QuizService, private router: Router) {
+    if (this.quizService.getCategory() === null) {
+      this.router.navigate(['/']);
+    } else {
+      this.quizService.getQuiz();
+    }
+  }
 
-  ngOnInit(): void {
-    const category = this.route.snapshot.paramMap.get('category');
-    this.quiz = this.quizService.getQuizzesByCategory(category!);
+  ngOnInit() {
+    this.category = this.quizService.getCategory();
+    this.maxQuestionCount = this.quizService.getMaxQuestionsIndex();
+    this.loadCurrentQuestion();
+    this.subscription = this.quizService.currentQuestionIndex.subscribe(
+      (newValue) => {
+        this.activeQuestionIndex = newValue;
+      }
+    );
+    this.correctAnswerIndex = this.quizService.getCorrectAnswerIndex();
+  }
+
+  getLetterFromIndex(index: number) {
+    const letters = ['A', 'B', 'C', 'D'];
+    return letters[index];
+  }
+
+  onAnswerSelected(index: number) {
+    if (this.answerSelectable) {
+      this.selectedAnswer = index;
+      this.quizService.setSelectedAnswer(index);
+    }
+  }
+
+  checkAnswer() {
+    if (this.selectedAnswer !== undefined) {
+      this.answerSubmitted = true;
+      this.answerSelectable = false;
+      this.quizService.checkSelectedAnswer();
+    }
+    this.noAnswerSelected = true;
+  }
+
+  nextQuestion() {
+    this.quizService.setNextQuestionIndex();
+    if (this.activeQuestionIndex < this.maxQuestionCount) {
+      this.loadCurrentQuestion();
+    } else {
+      this.correctAnswers = this.quizService.correctAnswers;
+    }
+  }
+
+  loadCurrentQuestion() {
+    this.question = this.quizService.getActiveQuestion();
+    this.possibleAnswers = this.quizService.getPossibleAnswers();
+    this.selectedAnswer = undefined;
+    this.answerSubmitted = false;
+    this.answerSelectable = true;
+    this.noAnswerSelected = false;
+    this.correctAnswerIndex = this.quizService.getCorrectAnswerIndex();
   }
 }

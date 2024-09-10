@@ -13,7 +13,11 @@
     box-shadow: 0 16px 40px 0 rgba(143, 160, 193, 0.14);
     transition: all 300ms ease-in-out;
 
-    &:not(.selected):hover .icon-box {
+    span {
+        text-align: left;
+    }
+
+    &:not(.selected):not(.correct):not(.wrong):hover .icon-box {
         background-color: #F6E7FF;
         color: $purple;
     }
@@ -38,6 +42,27 @@
         .icon-box {
             color: $pure-white;
             background-color: $purple;
+        }
+
+
+    }
+
+    &.correct {
+        -webkit-box-shadow: inset 0px 0px 0px 3px $green;
+        box-shadow: inset 0px 0px 0px 3px $green;
+
+        .icon-box {
+            color: $pure-white;
+            background-color: $green;
+        }
+    }
+
+    &.wrong {
+        -webkit-box-shadow: inset 0px 0px 0px 3px $red;
+        box-shadow: inset 0px 0px 0px 3px $red;
+
+        .icon-box {
+            background-color: $red;
         }
     }
 }

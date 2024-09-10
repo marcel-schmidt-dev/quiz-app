@@ -1,8 +1,12 @@
 <button
   class="button font-heading-s"
-  [ngClass]="{ selected: isSelected }"
+  [ngClass]="{
+    selected: isSelected,
+    correct: isCorrect && answerSubmitted,
+    wrong: isSelected && answerSubmitted && !isCorrect
+  }"
   (click)="handleClick()"
 >
   <div class="icon-box">{{ letter }}</div>
-  <ng-content></ng-content>
+  <span><ng-content></ng-content></span>
 </button>

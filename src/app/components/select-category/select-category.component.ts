@@ -14,13 +14,9 @@ import { HeaderComponent } from '../header/header.component';
 export class SelectCategoryComponent {
   categories: any[] = [];
 
-  constructor(private quizzesService: QuizzesService, private router: Router) {}
+  constructor(private quizzesService: QuizzesService) {}
 
   ngOnInit(): void {
     this.categories = this.quizzesService.getQuizCategories();
-  }
-
-  navToQuiz(category: any) {
-    this.router.navigate([category]);
   }
 }

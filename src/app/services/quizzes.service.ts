@@ -372,8 +372,6 @@ export class QuizzesService {
     },
   ];
 
-  constructor() {}
-
   getQuizzesByCategory(category: string) {
     return this.quizzes.find(
       (quiz) => quiz.title.toLowerCase() === category.toLowerCase()

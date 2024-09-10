@@ -1,9 +1,45 @@
 <app-header
-  [title]="quiz.title"
-  [icon]="quiz.icon"
-  [background]="quiz.background"
+  [title]="category.title"
+  [icon]="category.icon"
+  [background]="category.background"
 ></app-header>
-<app-quiz-container
-  [questions]="quiz.questions"
-  [questionIndex]="questionIndex"
-></app-quiz-container>
+@if ((activeQuestionIndex + 1) > maxQuestionCount) {
+<app-quiz-summary
+  [category]="category"
+  [correctAnswers]="correctAnswers"
+  [maxAnswers]="maxQuestionCount"
+></app-quiz-summary>
+} @else {
+<div class="quiz">
+  <div>
+    <span class="font-body-s"
+      >Question {{ activeQuestionIndex + 1 }} of {{ maxQuestionCount }}</span
+    >
+    <p class="font-heading-m">{{ question }}</p>
+  </div>
+  <div>
+    @for (possibleAnswer of possibleAnswers; track $index) {
+    <app-quiz-button
+      [letter]="getLetterFromIndex($index)"
+      [index]="$index"
+      [isSelected]="selectedAnswer === $index"
+      [isCorrect]="$index === correctAnswerIndex"
+      [answerSubmitted]="answerSubmitted"
+      (answerSelected)="onAnswerSelected($index)"
+      >{{ possibleAnswer }}</app-quiz-button
+    >
+    } @if (this.answerSubmitted) {
+    <app-submit-button (onSubmit)="nextQuestion()"
+      >Next Question</app-submit-button
+    >
+    } @else { @if (this.noAnswerSelected) {<app-submit-button
+      (onSubmit)="checkAnswer()"
+      >Please select Answer</app-submit-button
+    >}@else {
+    <app-submit-button (onSubmit)="checkAnswer()"
+      >Submit Answer</app-submit-button
+    >
+    } }
+  </div>
+</div>
+}
