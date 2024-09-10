@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class QuizService {
   quiz: any;
   category: any = null;
-  questionIndex = new BehaviorSubject<number>(9);
+  questionIndex = new BehaviorSubject<number>(0);
   selectedAnswer: any = null;
   correctAnswers: number = 0;
   answerSubmitted: boolean = false;
