@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { QuizService } from '../../services/quiz.service';
+import { QuizService } from '../../services/Quiz.service';
 import { Router } from '@angular/router';
 
 @Component({

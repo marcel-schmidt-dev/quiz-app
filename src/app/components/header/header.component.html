@@ -1,20 +1,34 @@
 <header>
   <div class="logo">
-    @if (icon) {
     <a href="/">
       <div class="icon-box" [ngStyle]="{ 'background-color': background }">
         <img [src]="icon" />
       </div>
       <span class="font-heading-s">{{ title }}</span>
     </a>
-    }
   </div>
   <div class="mode-switch">
-    <img src="/assets/images/icon-sun-dark.svg" />
+    <img
+      [src]="
+        this.darkMode
+          ? '/assets/images/icon-sun-light.svg'
+          : '/assets/images/icon-sun-dark.svg'
+      "
+    />
     <label class="switch">
-      <input type="checkbox" />
+      <input
+        type="checkbox"
+        [checked]="darkModeService.getCurrentDarkModeValue()"
+        (click)="switchDarkMode()"
+      />
       <span class="slider round"></span>
     </label>
-    <img src="/assets/images/icon-moon-dark.svg" />
+    <img
+      [src]="
+        this.darkMode
+          ? '/assets/images/icon-moon-light.svg'
+          : '/assets/images/icon-moon-dark.svg'
+      "
+    />
   </div>
 </header>

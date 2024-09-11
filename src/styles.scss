@@ -25,6 +25,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 300ms ease-in-out;
 }
 
 html {
@@ -95,4 +96,39 @@ body {
     font-weight: 400;
     font-size: 1rem;
     line-height: 150%;
+}
+
+.dark-mode {
+    background-color: $dark-navy;
+    background-image: url('/assets/images/pattern-background-desktop-dark.svg');
+
+    .font-heading-l-regular,
+    .font-heading-l-bold,
+    .font-heading-m {
+        color: #fff;
+    }
+
+    .font-body-s {
+        color: $Light-bluish !important;
+    }
+
+    .button {
+        background-color: $navy !important;
+        color: $pure-white !important;
+    }
+
+    .button .icon-box {
+        background-color: $light-grey;
+        color: $grey-navy;
+    }
+
+    .logo span {
+        color: $pure-white !important;
+    }
+
+    progress,
+    progress::-webkit-progress-bar,
+    .card {
+        background-color: $navy !important;
+    }
 }
