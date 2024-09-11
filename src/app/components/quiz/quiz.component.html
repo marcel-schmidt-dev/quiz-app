@@ -12,10 +12,17 @@
 } @else {
 <div class="quiz">
   <div>
-    <span class="font-body-s"
-      >Question {{ activeQuestionIndex + 1 }} of {{ maxQuestionCount }}</span
-    >
-    <p class="font-heading-m">{{ question }}</p>
+    <div>
+      <span class="font-body-s"
+        >Question {{ activeQuestionIndex + 1 }} of {{ maxQuestionCount }}</span
+      >
+      <p class="font-heading-m">{{ question }}</p>
+    </div>
+
+    <progress
+      [value]="activeQuestionIndex + 1"
+      [max]="maxQuestionCount"
+    ></progress>
   </div>
   <div>
     @for (possibleAnswer of possibleAnswers; track $index) {
