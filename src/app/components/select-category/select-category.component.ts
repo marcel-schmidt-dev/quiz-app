@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [SelectCategoryButtonComponent, HeaderComponent, CommonModule],
   templateUrl: './select-category.component.html',
-  styleUrl: './select-category.component.scss',
+  styleUrls: ['./select-category.component.scss'],
 })
 export class SelectCategoryComponent {
   categories: any[] = [];
