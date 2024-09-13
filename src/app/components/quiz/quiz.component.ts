@@ -6,6 +6,7 @@ import { QuizService } from '../../services/Quiz.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { QuizSummaryComponent } from '../quiz-summary/quiz-summary.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-quiz',
@@ -15,6 +16,7 @@ import { QuizSummaryComponent } from '../quiz-summary/quiz-summary.component';
     QuizButtonComponent,
     SubmitButtonComponent,
     QuizSummaryComponent,
+    CommonModule,
   ],
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss',

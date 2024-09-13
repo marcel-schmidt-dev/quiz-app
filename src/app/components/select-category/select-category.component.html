@@ -9,14 +9,14 @@
     <p class="font-body-s">Pick a subject to get started.</p>
   </div>
   <div>
-    @for (category of categories; track $index) {
-    <app-select-category-button
-      [icon]="category.icon"
-      [iconBackground]="category.background"
-      [category]="category"
-    >
-      {{ category.title }}
-    </app-select-category-button>
-    }
+    <div *ngFor="let category of categories; let i = index">
+      <app-select-category-button
+        [icon]="category.icon"
+        [iconBackground]="category.background"
+        [category]="category"
+      >
+        {{ category.title }}
+      </app-select-category-button>
+    </div>
   </div>
 </div>
