@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './quiz-button.component.html',
-  styleUrl: './quiz-button.component.scss',
+  styleUrls: ['./quiz-button.component.scss'],
 })
 export class QuizButtonComponent {
   @Input() letter: string = '';

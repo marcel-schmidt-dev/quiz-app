@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './select-category-button.component.html',
-  styleUrl: './select-category-button.component.scss',
+  styleUrls: ['./select-category-button.component.scss'],
 })
 export class SelectCategoryButtonComponent {
   @Input() icon: string = '';

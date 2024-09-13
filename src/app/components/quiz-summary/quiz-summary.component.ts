@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './quiz-summary.component.html',
-  styleUrl: './quiz-summary.component.scss',
+  styleUrls: ['./quiz-summary.component.scss'],
 })
 export class QuizSummaryComponent {
   @Input() correctAnswers: number = 0;

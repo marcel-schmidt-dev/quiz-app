@@ -5,7 +5,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './submit-button.component.html',
-  styleUrl: './submit-button.component.scss',
+  styleUrls: ['./submit-button.component.scss'],
 })
 export class SubmitButtonComponent {
   @Output() onSubmit = new EventEmitter();

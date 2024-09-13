@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
   ],
   templateUrl: './quiz.component.html',
-  styleUrl: './quiz.component.scss',
+  styleUrls: ['./quiz.component.scss'],
 })
 export class QuizComponent {
   category: any;
