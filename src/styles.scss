@@ -3,22 +3,22 @@
 
 @font-face {
   font-family: Rubik-Regular;
-  src: url("/assets/fonts/static/Rubik-Regular.ttf") format("truetype");
+  src: url("/fonts/static/Rubik-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: Rubik-Medium;
-  src: url("/assets/fonts/static/Rubik-Medium.ttf") format("truetype");
+  src: url("/fonts/static/Rubik-Medium.ttf") format("truetype");
 }
 
 @font-face {
   font-family: Rubik-Light;
-  src: url("/assets/fonts/static/Rubik-Light.ttf") format("truetype");
+  src: url("/fonts/static/Rubik-Light.ttf") format("truetype");
 }
 
 @font-face {
   font-family: Rubik-Italic;
-  src: url("/assets/fonts/static/Rubik-Italic.ttf") format("truetype");
+  src: url("/fonts/static/Rubik-Italic.ttf") format("truetype");
 }
 
 * {
@@ -49,7 +49,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("/assets/images/pattern-background-desktop-light.svg");
+  background-image: url("/images/pattern-background-desktop-light.svg");
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -113,7 +113,7 @@ body {
 
 .dark-mode {
   background-color: $dark-navy;
-  background-image: url("/assets/images/pattern-background-desktop-dark.svg");
+  background-image: url("/images/pattern-background-desktop-dark.svg");
 
   .font-heading-l-regular,
   .font-heading-l-bold,

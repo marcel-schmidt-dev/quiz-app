@@ -7,7 +7,7 @@ export class QuizzesService {
   private quizzes = [
     {
       title: 'HTML',
-      icon: '/assets/images/icon-html.svg',
+      icon: '/images/icon-html.svg',
       background: '#FFF1E9',
       questions: [
         {
@@ -93,7 +93,7 @@ export class QuizzesService {
     },
     {
       title: 'CSS',
-      icon: '/assets/images/icon-css.svg',
+      icon: '/images/icon-css.svg',
       background: '#E0FDEF',
       questions: [
         {
@@ -173,7 +173,7 @@ export class QuizzesService {
     },
     {
       title: 'JavaScript',
-      icon: '/assets/images/icon-js.svg',
+      icon: '/images/icon-js.svg',
       background: '#EBF0FF',
       questions: [
         {
@@ -273,7 +273,7 @@ export class QuizzesService {
     },
     {
       title: 'Accessibility',
-      icon: '/assets/images/icon-accessibility.svg',
+      icon: '/images/icon-accessibility.svg',
       background: '#F6E7FF',
       questions: [
         {
