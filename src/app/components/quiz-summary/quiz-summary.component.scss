@@ -8,6 +8,10 @@
     gap: 64px;
   }
 
+  @media (max-width: 375px) {
+    gap: 40px;
+  }
+
   > div {
     width: 50%;
 
@@ -34,6 +38,11 @@
       color: $navy;
       margin-bottom: 40px;
 
+      @media (max-width: 375px) {
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
       .icon-box {
         max-width: 56px;
         max-height: 56px;
@@ -42,11 +51,24 @@
         justify-content: center;
         border-radius: 8px;
         padding: 8px;
+
+        @media (max-width: 375px) {
+          max-width: 40px;
+          max-height: 40px;
+        }
+
+        img {
+          width: 100%;
+        }
       }
     }
 
     .score {
       margin-bottom: 16px;
+
+      @media (max-width: 375px) {
+        font-size: 88px;
+      }
     }
 
     .score-subtitle {
@@ -62,5 +84,10 @@
     padding: 32px;
     border-radius: 24px;
     text-align: center;
+
+    @media (max-width: 375px) {
+      padding: 20px;
+      border-radius: 12px;
+    }
   }
 }

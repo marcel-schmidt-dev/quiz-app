@@ -23,6 +23,10 @@
       span {
         display: block;
         margin-bottom: 28px;
+
+        @media (max-width: 375px) {
+          margin-bottom: 12px;
+        }
       }
 
       p {
@@ -46,6 +50,11 @@
           margin-top: 40px;
           max-width: 100%;
           margin-bottom: 64px;
+        }
+
+        @media (max-width: 375px) {
+          margin-top: 24px;
+          margin-bottom: 40px;
         }
 
         &::-webkit-progress-bar {

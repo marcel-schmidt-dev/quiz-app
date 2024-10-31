@@ -6,6 +6,10 @@
     gap: 64px;
   }
 
+  @media (max-width: 375px) {
+    gap: 32px;
+  }
+
   > div {
     width: 50%;
 
