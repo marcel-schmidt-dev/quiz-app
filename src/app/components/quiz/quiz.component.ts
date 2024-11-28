@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { QuizButtonComponent } from '../quiz-button/quiz-button.component';
 import { SubmitButtonComponent } from '../submit-button/submit-button.component';
-import { QuizService } from '../../services/Quiz.service';
+import { QuizService } from '../../services/quiz.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { QuizSummaryComponent } from '../quiz-summary/quiz-summary.component';

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { QuizzesService } from './Quizzes.service';
+import { QuizzesService } from './quizzes.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QuizzesService } from '../../services/Quizzes.service';
+import { QuizzesService } from './../../services/quizzes.service';
 import { SelectCategoryButtonComponent } from '../select-category-button/select-category-button.component';
 import { HeaderComponent } from '../header/header.component';
 import { CommonModule } from '@angular/common';
